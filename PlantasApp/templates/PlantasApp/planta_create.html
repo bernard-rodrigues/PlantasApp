@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="border rounded-lg p-4 bg-lime-300 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[50vw]">
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div class="mb-2">
+            <label for={{form.nome_popular.label}} class="mb-2">{{form.nome_popular.label}}</label>
+            {{form.nome_popular}}
+            <label for={{form.nome_cientifico.label}} class="mb-2">{{form.nome_cientifico.label}}</label>
+            {{form.nome_cientifico}}
+            <div class="flex gap-2">
+                <div class="w-2/3">
+                    <label for={{form.sol_ou_sombra.label}} class="mb-2">{{form.sol_ou_sombra.label}}</label>
+                    {{form.sol_ou_sombra}}
+                </div>
+                <div class="w-1/3">
+                    <label for={{form.intervalo_rega.label}} class="mb-2">{{form.intervalo_rega.label}}</label>
+                    {{form.intervalo_rega}}
+                </div>
+            </div>
+            <label for={{form.foto_da_planta.label}} class="mb-2">{{form.foto_da_planta.label}}</label>
+            {{form.foto_da_planta}}
+            <label for={{form.descricao.label}} class="mb-2">{{form.descricao.label}}</label>
+            {{form.descricao}}
+        </div>
+        <button class="bg-lime-400 rounded px-3 py-2 hover:bg-lime-500">Enviar</button>
+    </form>
+</div>
+{% endblock %}

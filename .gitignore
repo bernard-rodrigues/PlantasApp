@@ -1,0 +1,5 @@
+config.json
+__pycache__
+.Plantas
+uploads
+db.sqlite3
